@@ -1,0 +1,91 @@
+#include<bits/stdc++.h>
+
+using namespace std
+;
+
+int main() {
+	
+//code
+	int t;
+
+	cin>>t;
+
+	for(int T=0;T<t;T++)
+
+	{
+	    string s;
+
+	    cin>>s;
+
+	    vector<char>V;
+
+	    vector<int> B;
+
+	    for(int i=0;i<s.length();i++)
+
+	    {int c=0;
+
+	        for(int j=0;j<V.size();j++)
+
+	        {
+	            if(s[i]==V[j])
+	
+            {
+	                B[j]=B[j]+1;
+
+	                c++;
+	
+                break;
+	 
+           }
+	            
+	
+        }
+	    
+    if(c==0)
+	     
+   {
+	         
+   V.push_back(s[i]);
+	   
+         B.push_back(1);
+
+	        }
+	     
+   
+	    }
+	
+    sort(B.begin(),B.end());
+
+	    reverse(B.begin(),B.end());
+
+	    if(s.length() & 1)
+	   
+ {
+	        if(B[0]>(s.length()+1)/2)
+
+	        cout<<"0"<<"\n";
+	 
+       else
+	        cout<<"1"<<"\n";
+
+	    }
+
+	    else
+	
+    {
+	    if(B[0]>s.length()/2)
+
+	    cout<<"0"<<"\n";
+	  
+  else
+	
+    cout<<"1"<<"\n";
+	  
+  }
+	
+}
+
+	return 0;
+
+}
